@@ -7,6 +7,10 @@ Welcome to the practical guide for this Git workshop. During this session, we wi
 * Master the local and remote Git workflow.
 * Learn how to solve conflicts confidently from the terminal.
 
+## Main Reference
+
+This tutorial is based on ["Pro Git"](https://git-scm.com/book/en/v2) by Scott Chacon (2nd edition, 2014).
+
 ## 🛠️ Step 0: Set up your Environment
 Before we begin, open your preferred environment and log into your **GitHub account**.
 

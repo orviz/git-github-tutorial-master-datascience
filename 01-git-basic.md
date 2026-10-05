@@ -1,6 +1,9 @@
 # 01 - Git Basics
 
-This tutorial is based on ["Pro Git"](https://git-scm.com/book/en/v2) by Scott Chacon (2nd edition, 2014).
+In this introductory chapter will review:
+* [010 - Git Configuration](#010---git-configuration)
+* [011 - Repository Creation](#011-repository-creation)
+* [012 - Understanding the Staging Lifecycle](#012-understanding-the-staging-lifecycle)
 
 
 ## 010 - Git Configuration
@@ -72,10 +75,10 @@ $ git config --global init.defaultBranch main
 In practical terms, a repository in Git is represented by a folder in your file system. Create a fresh folder (`mkdir` shell command) for the tutorial and initialize Git:
 
 ```bash
-$ mkdir git-practice
+$ mkdir git-datascience-master-practice
 
 # Be sure to 'cd' into the repository folder
-$ cd git-practice
+$ cd git-datascience-master-practice
 $ git init
 ```
 
@@ -255,3 +258,29 @@ Changes to be committed:
 
 $ git commit -m "fix: unnecessary messages added to the README.md file"
 ```
+
+## 013: Git History
+
+To view the commit history of our project we use `git log` command:
+```bash
+$ git log
+commit ef889ad4ca267c17c332bae571bc122f17a9a5e7 (HEAD -> main)
+Author: Pablo Orviz <orviz@ifca.es>
+Date:   Mon Oct 5 13:53:49 2026 +0200
+
+    fix: unnecessary messages added to the README.md file
+
+commit bbbaa9f0cecd722a7f2de87efd8a17845609f41c
+Author: pablo <pablo@trea.ifca.es>
+Date:   Mon Oct 5 13:00:08 2026 +0200
+
+    Initial commit: add README
+```
+
+**What the Git history information tells us:**
+- Ordered list of commit &rarr; Most recent commits show up first.
+- Commit data:
+    - Identifier of the commit.
+    - Author’s name & email.
+    - Date
+    - Author’s commit message
