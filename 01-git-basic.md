@@ -4,6 +4,7 @@ In this introductory chapter will review:
 * [010 - Git Configuration](#010---git-configuration)
 * [011 - Repository Creation](#011-repository-creation)
 * [012 - Understanding the Staging Lifecycle](#012-understanding-the-staging-lifecycle)
+* [013 - Git History](#013-git-history)
 
 
 ## 010 - Git Configuration
@@ -261,7 +262,10 @@ $ git commit -m "fix: unnecessary messages added to the README.md file"
 
 ## 013: Git History
 
-To view the commit history of our project we use `git log` command:
+### More than a Backup
+Git **doesn't just save copies; it records a semantic, searchable timeline** of your project's evolution.
+
+To view the commit history of our project **we use `git log` command**:
 ```bash
 $ git log
 commit ef889ad4ca267c17c332bae571bc122f17a9a5e7 (HEAD -> main)
@@ -284,3 +288,25 @@ Date:   Mon Oct 5 13:00:08 2026 +0200
     - Author’s name & email.
     - Date
     - Author’s commit message
+
+### Advanced History Inspection with `git log`
+
+Unlock the power of history inspection with the following flags:
+
+- `git log --oneline`: Condenses every commit into a single, clean line.
+- `git log --graph --all`: Draws an ASCII visual map of all your branches and merges directly in the terminal.
+- `git log -n 1`: Shows only the last commits to avoid clutter.
+- `git log --author="Pablo"`: Filters and displays commits matching the author name.
+- `git log -1 --patch`: Shows modifications of last (`-1`) change.
+
+### Modifiable History
+
+Git stands for the development of a *clean history*. To this end, it provides ways to **alter the commits already done at any point in time**.
+
+**E.g. Fixing the Immediate Past with `git commit --amend`**
+- The `--amend` flag allows us to modify the very last commit (first appearance in our history).
+- Useful when: amending a typo, the commit message or any last-minute change not being added.
+- Exercise:
+    1. Modify the `README.md` file.
+    2. Track the change, adding it to the Staging Area.
+    3. Commit with the `--amend` flag to append this change as part of the last commit.
