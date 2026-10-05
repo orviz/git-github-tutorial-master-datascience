@@ -158,6 +158,7 @@ Considerations about the `git commit` command:
     - Modifications *shall be related, atomic and topical*
     > “A commit should contain related changes and nothing but related changes” (codefoster.com)
 - The **commit message shall be descriptive in the long term**: critical to know its purpose at a glance.
+    - The `git commit` command alone (without the `-m` option), opens up the default editor (we configured with `git config`)
 
 ```bash
 # Shortcut to provide a commit message through `-m` option

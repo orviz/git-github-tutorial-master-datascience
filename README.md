@@ -15,7 +15,7 @@ This tutorial is based on ["Pro Git"](https://git-scm.com/book/en/v2) by Scott C
 Before we begin, open your preferred environment and log into your **GitHub account**.
 
 1. Local Git CLI is preferred. If not installed, [follow installation steps based on your operating system](#git-cli-installation-local-option-preferred).
-2. If not locally installed, use the Master's [Data Science Hub service](#git-cli-from-data-science-hub-services-jupyterlab).
+2. If not locally installed, use the Master's [Data Science Hub service](#git-cli-from-data-science-hub-services-jupyterlab-the-fastest-for-day-0).
 
 ### Git CLI installation: Local Option (the *Preferred Option*)
 
@@ -30,11 +30,10 @@ Before we begin, open your preferred environment and log into your **GitHub acco
 
 1. Default shell is available via the `Terminal` program within your `Utilities` folder.
 2. Type `git --version`. *If not installed*: [https://git-scm.com/download/mac](https://git-scm.com/download/mac)
-    - Git installation on Windows: [gitforwindows.org](gitforwindows.org).
 
 **Git installation on Windows**
 
-1. Install [gitforwindows.org's app](gitforwindows.org).
+1. Install [gitforwindows.org's](https://gitforwindows.org/) app.
 
 **Additional reference**: [Git installation steps on Software Carpentries Git tutorial](https://carpentries.github.io/workshop-template/install_instructions/)
 
