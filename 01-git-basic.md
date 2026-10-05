@@ -297,7 +297,32 @@ Unlock the power of history inspection with the following flags:
 - `git log --graph --all`: Draws an ASCII visual map of all your branches and merges directly in the terminal.
 - `git log -n 1`: Shows only the last commits to avoid clutter.
 - `git log --author="Pablo"`: Filters and displays commits matching the author name.
-- `git log -1 --patch`: Shows modifications of last (`-1`) change.
+- `git log -1 --patch`: Shows modifications of last (`-1`) change. It uses `git diff` output.
+
+### Unlocking the Power of Commit IDs (Hashes)
+
+When you run `git log --oneline`, you will notice a 7-character code at the beginning of each line (e.g., `a1b2c3d`). This is the **Commit ID** (a short SHA-1 hash). Think of it as a *unique fingerprint* for that specific moment in time.
+
+By capturing these IDs, you can perform surgical operations on your history using the CLI.
+
+**1. Inspecting a Specific Commit: `git show`**
+If you want to see exactly *what* changed inside a past commit (who wrote it, when, and the exact lines added or removed), use `git show` followed by the Commit ID:
+
+```bash
+git show <commit-id>
+```
+
+**2. Comparing Two Points in Time: `git diff`**
+Instead of guessing what changed between last Tuesday and today, you can use the CLI to compare any two commits instantly.
+
+* **Compare a past commit with your current working directory:**
+  ```bash
+  git diff <commit-id>
+  ```
+* **Compare two specific past commits against each other:**
+  ```bash
+  git diff <old-commit-id> <new-commit-id>
+  ```
 
 ### Modifiable History
 
