@@ -5,7 +5,9 @@ In this introductory chapter will review:
 * [011 - Repository Creation](#011-repository-creation)
 * [012 - Understanding the Staging Lifecycle](#012-understanding-the-staging-lifecycle)
 * [013 - Git History](#013-git-history)
+* [014 - File Operations](#014-file-management)
 
+---
 
 ## 010 - Git Configuration
 
@@ -68,6 +70,8 @@ Ensure that `main` is always being used as the default branch name:
 ```bash
 $ git config --global init.defaultBranch main
 ```
+
+---
 
 ## 011: Repository Creation
 
@@ -174,6 +178,8 @@ nothing to commit, working tree clean
 **What the status information tells us:**
 - Our working directory is free of untracked or staged changes: `"nothing to commit"`
 
+---
+
 ## 012: Understanding the Staging Lifecycle
 
 ![Esquema de la base de datos](images/staging_lifecycle.png)
@@ -260,6 +266,8 @@ Changes to be committed:
 $ git commit -m "fix: unnecessary messages added to the README.md file"
 ```
 
+---
+
 ## 013: Git History
 
 ### More than a Backup
@@ -331,7 +339,42 @@ Git stands for the development of a *clean history*. To this end, it provides wa
 **E.g. Fixing the Immediate Past with `git commit --amend`**
 - The `--amend` flag allows us to modify the very last commit (first appearance in our history).
 - Useful when: amending a typo, the commit message or any last-minute change not being added.
-- Exercise:
-    1. Modify the `README.md` file.
-    2. Track the change, adding it to the Staging Area.
-    3. Commit with the `--amend` flag to append this change as part of the last commit.
+
+**Exercise**:
+1. Modify the `README.md` file.
+2. Track the change, adding it to the Staging Area.
+3. Commit with the `--amend` flag to append this change as part of the last commit.
+
+---
+
+## 014: File Management
+
+### 1. Moving or Renaming Files: `git mv`
+If you want to rename a file or move it to a different folder, use `git mv` (Git Move). 
+
+* **To rename a file:**
+  ```bash
+  git mv old-name.txt new-name.txt
+  ```
+* **To move a file into a folder:**
+  ```bash
+  mkdir src
+  git mv new-name.txt src/
+  ```
+
+**Why is this better than associated Shell commands?** Run `git status` right after. You will see that Git instantly recognizes the action as a clean `renamed` event and automatically adds it to the **Staging Area**. No extra `git add` required!
+
+### 2. Deleting Files Safely: `git rm`
+
+The same applies for deleting files with Git: if you use the Git CLI, you won't need to stage this change with `git add`.
+
+* **To delete a file from both your disk and Git tracking:**
+  ```bash
+  git rm src/new-name.txt
+  ```
+
+**Exercise**:
+1. Create a temporary file: `echo "temp" > trash.txt`
+2. Track it and save it: `git add trash.txt && git commit -m "Add temporary file"`
+3. Now, delete it completely using the proper CLI command.
+4. Run `git status` to confirm it is staged for deletion, then commit the change.
