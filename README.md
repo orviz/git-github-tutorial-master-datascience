@@ -22,7 +22,7 @@ Before we begin, open your preferred environment and log into your **GitHub acco
 **Git installation on Linux**
 
 1. Open a shell terminal
-2. Type `git --version` + Enter. *If not installed*: 
+2. Type `git --version` + Enter. *If not installed*:
     - For Debian/Ubuntu run: `sudo apt-get install git`
     - For RedHat distros run: `sudo dnf install git`
 
@@ -50,8 +50,9 @@ Before we begin, open your preferred environment and log into your **GitHub acco
 
 ---
 
-## 📅 Workshop Index
+## Workshop Index
 Follow the files in chronological order:
-* [00 - Shell Reminder](./00-shell-reminder.md) 💡 *Read this if you get stuck in a terminal text editor!*
-* [01 - Git Basics](./01-git-basic.md) 🥚 *Configuration, staging, committing, and logs.*
-* [02 - Advanced Git & Conflicts](./02-git-advanced.md) 🦅 *Branches, manual merging, and resolving conflicts via CLI.*
+* [00 - Shell Reminder](./00-shell-reminder.md) *Reminder of Shell commands targeting rapid file content editting"
+* [01 - Git Basics](./01-git-basic.md) *Configuration, staging, committing, and history analysis.*
+* [02 - Collaborative Work](./02-collaborative-work.md) *Moving local changes to GitHub collaborative environment.*
+<!-- * [03 - Advanced Git & Conflicts](./02-git-advanced.md) 🦅 *Branches, manual merging, and resolving conflicts via CLI.* -->
