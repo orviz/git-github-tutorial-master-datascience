@@ -78,6 +78,8 @@ Similar syntax as with the `git remote add`:
 
 Once your remote is configured, you will use two fundamental commands to move your commits back and forth between 1) your local copy on your local machine and 2) the remote repository located at GitHub.
 
+**Step 0: Create a GitHub Personal Access Token (PAT)** &rarr; follow [these steps](./020-github-auth.md).
+
 **Step 1: Let's push the commits done in our local repository: `git push`**
 
 The syntax of the *push* action in Git is as follows:
