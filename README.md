@@ -54,5 +54,6 @@ Before we begin, open your preferred environment and log into your **GitHub acco
 Follow the files in chronological order:
 * [00 - Shell Reminder](./00-shell-reminder.md) *Reminder of Shell commands targeting rapid file content editting"
 * [01 - Git Basics](./01-git-basic.md) *Configuration, staging, committing, and history analysis.*
-* [02 - Collaborative Work](./02-collaborative-work.md) *Moving local changes to GitHub collaborative environment.*
+* [02 - Remote Work](./02-remote-work.md) *Moving local changes to remote GitHub repositories.*
+* [03 - Collaborative Work](./03-collaborative-work.md) *Learn the Git/GitHub workflow in collaborative environments.*
 <!-- * [03 - Advanced Git & Conflicts](./02-git-advanced.md) 🦅 *Branches, manual merging, and resolving conflicts via CLI.* -->

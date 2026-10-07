@@ -1,14 +1,7 @@
-# 02 - Collaborative Work through Git+GitHub
+# 02 - Working Remotely
 
-In this chapter will focus on the integration of local changes with a remote repository located at the GitHub platform:
-* [020 - Integration of Remotes](#020---integration-of-remotes)
-
----
-
-## 020 - Integration of Remotes
-
-- So far, we have been working locally on our computer. However, to truly leverage the power of Git, we need to understand **remote repositories**.
-- Remote repositories are **alternative copies** of the project you are working with, **hosted on the Internet** such as on [GitHub platform](https://github.com).
+So far, *we have been working locally on our computer*. However, to truly leverage the power of Git, we need to understand **remote repositories**.
+- **Remote repositories are alternative copies** of the project you are working with, **hosted on the Internet** such as on [GitHub platform](https://github.com).
 - Permissions on remotes:
     * **Write-access copies:** Repositories **you own or *"forks"*** where you have full permission to make changes.
     * **Read-only copies:** Reference repositories (often called `upstream`) where you can **fetch updates (`pull` action) but cannot directly modify the code (`push` action)**.
@@ -122,6 +115,7 @@ $ git pull origin main
 **Step 4: Simulating a Collaborative Environment**
 
 We will simulate a change in the code on GitHub, which in the real world could have been made by an external collaborator:
+
 1. [GitHub] On your GitHub repository webpage, **click on the `README.md` file**.
 2. [GitHub] **Click the *"Edit this file"*** in the top right corner.
 3. [GitHub] **Add a new line** at the bottom of the file:
@@ -140,3 +134,38 @@ We will simulate a change in the code on GitHub, which in the real world could h
     - To prove the CLI successfully synchronized your project:
       1. Look for the remote line in the local `README.md`: either with your local editor (nano, vim, VSCode) or with `cat` Shell command.
       2. Check the history log (`git log`) and look for the commit.
+
+
+### Understanding the Syncing Process in Git: Pull (`git pull`) vs Fetch (`git fetch`)
+
+- If you remember, when we switched to the terminal to pull the commit from GitHub, the `git status` command did not complain at all &rarr; **Git did not notify us about changes being done remotely**.
+- *Why does this happen?* Because **Git only talks to GitHub when you explicitly tell it to**.
+- *Why did it work with `git pull`? Because **`git pull` is the combination on **two actions: `git fetch` (download metadata) + `git merge` (combine into your workspace)**.
+
+Let's simulate another remote change to understand the *Fetch action*:
+  
+1. [GitHub] Follow the steps to edit the `README.md` file and commit the changes as we did above.
+2. [Terminal] Back to the terminal, run `git status` to confirm Git does not know anything about the remote change in GitHub.
+3. [Terminal] Force Git to check what is going on at GitHub. For this we use `git fetch`:
+   ```bash
+   git fetch origin
+   ```
+4. [Terminal] Check the content of the `README.md` file (`cat`, editor). **The new line is NOT there.** `git fetch` did not modify your files.
+5. [Terminal] Run `git status`. Now Git will explicitly warn us about the differences with the remote repository:
+   ```text
+   Your branch is behind 'origin/main' by 1 commit, and can be fast-forwarded.
+     (use "git pull" to update your local branch)
+   ```
+*Why `git fetch` is useful?* &rarr; allows you to audit what your team did before bringing it into your computer. For instance, check the exact lines that changed before merging them by running:
+
+```bash
+git diff main origin/main
+```
+
+And now to complete the *Pull action* (remember: Fetch + Merge) we use `git merge`:
+
+```bash
+git merge origin/main
+```
+
+Now check your `README.md` locally. **The line has arrived safely!**
