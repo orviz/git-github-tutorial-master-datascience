@@ -78,21 +78,63 @@ Similar syntax as with the `git remote add`:
 
 Once your remote is configured, you will use two fundamental commands to move your commits back and forth between 1) your local copy on your local machine and 2) the remote repository located at GitHub.
 
-**Push changes to remote repositories:**
+**Step 1: Let's push the commits done in our local repository: `git push`**
+
+The syntax of the *push* action in Git is as follows:
+
   ```bash
   git push <remote-name> <branch-name>
   ```
 
-Let's push the commits done in our local repository (now linked to the remote):
+Thus, in our case we shall run:
 
 ```bash
 $ git push origin main
 ```
 
-  *Example:* `git push origin main` *(This uploads your local commits to the cloud).*
+*Your local commits are now available and in sync with the remote Git repository located at the GitHub platform.*
 
-* **Pull changes from remote repositories:**
+**Step 2: Verifying on GitHub**
+
+1. Open your web browser and head to your **GitHub repository** &rarr; remember: `https://github.com/<your-user>/<your-repository-name>`.
+2. **Observe:** Your files (`README.md`, etc.) and your exact commit history are now visible on the website. The web interface is just a reflection of what you pushed via the CLI.
+
+**Step 3: Checking for Updates: `git pull`**
+
+The syntax of the *pull* action in Git is as follows:
+
   ```bash
   git pull <remote-name> <branch-name>
   ```
-  *Example:* `git pull origin main` *(This downloads new commits from GitHub and merges them directly into your current local branch).*
+
+Thus, in our case the command to run would be:
+
+```bash
+$ git pull origin main
+```
+
+*This downloads new commits from GitHub and merges them directly into your current local branch. **But in this case..***
+- Nothing happens: the terminal will say `Already up to date.`
+- *Why?* &rarr; You are the only developer working on this project, and your local machine is perfectly synced with GitHub. There is nothing new to download.
+
+**Step 4: Simulating a Collaborative Environment**
+
+We will simulate a change in the code on GitHub, which in the real world could have been made by an external collaborator:
+1. [GitHub] On your GitHub repository webpage, **click on the `README.md` file**.
+2. [GitHub] **Click the *"Edit this file"*** in the top right corner.
+3. [GitHub] **Add a new line** at the bottom of the file:
+   ```markdown
+   > Note: This line was added remotely by a brilliant teammate working from another country.
+   ```
+4. [GitHub] Scroll down, **write a commit message** (e.g. *"Update README from web"*), and **click the *"Commit changes"*** button.
+    - *With these changes, GitHub (the remote) is ahead of your local machine by exactly **1 commit**. Your local repository is outdated!*
+5. [Terminal] Go back to the terminal. If you run **`git status`, Git local won't notice anything** yet because it doesn't constantly spy on internet traffic.
+6. Let's **fetch and merge** those remote changes:
+   ```bash
+   $ git pull origin main
+   ```
+7. Inspect the Results!
+    - Look at your terminal output. You will see a fast-forward summary showing that lines were added (`1 file changed, 1 insertion(+)`).
+    - To prove the CLI successfully synchronized your project:
+      1. Look for the remote line in the local `README.md`: either with your local editor (nano, vim, VSCode) or with `cat` Shell command.
+      2. Check the history log (`git log`) and look for the commit.
