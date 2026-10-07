@@ -56,4 +56,5 @@ Follow the files in chronological order:
 * [01 - Git Basics](./01-git-basic.md) *Configuration, staging, committing, and history analysis.*
 * [02 - Remote Work](./02-remote-work.md) *Moving local changes to remote GitHub repositories.*
 * [03 - Collaborative Work](./03-collaborative-work.md) *Learn the Git/GitHub workflow in collaborative environments.*
+    * [Exercise](./030-exercise-PR.md) *Prove your Git and GitHub knowledge.*
 <!-- * [03 - Advanced Git & Conflicts](./02-git-advanced.md) 🦅 *Branches, manual merging, and resolving conflicts via CLI.* -->
