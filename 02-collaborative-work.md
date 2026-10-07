@@ -1,11 +1,11 @@
 # 02 - Collaborative Work through Git+GitHub
 
 In this chapter will focus on the integration of local changes with a remote repository located at the GitHub platform:
-* [020 - Connecting with Remotes](#010---git-configuration)
+* [020 - Integration of Remotes](#020---integration-of-remotes)
 
 ---
 
-## 020 - Connecting with Remotes
+## 020 - Integration of Remotes
 
 - So far, we have been working locally on our computer. However, to truly leverage the power of Git, we need to understand **remote repositories**.
 - Remote repositories are **alternative copies** of the project you are working with, **hosted on the Internet** such as on [GitHub platform](https://github.com).
@@ -72,3 +72,27 @@ Similar syntax as with the `git remote add`:
 
 - *Note:* `git remote remove origin` will only delete the remote link, it **does not delete the repository on GitHub**.
 
+---
+
+### Syncing Changes: Push & Pull
+
+Once your remote is configured, you will use two fundamental commands to move your commits back and forth between 1) your local copy on your local machine and 2) the remote repository located at GitHub.
+
+**Push changes to remote repositories:**
+  ```bash
+  git push <remote-name> <branch-name>
+  ```
+
+Let's push the commits done in our local repository (now linked to the remote):
+
+```bash
+$ git push origin main
+```
+
+  *Example:* `git push origin main` *(This uploads your local commits to the cloud).*
+
+* **Pull changes from remote repositories:**
+  ```bash
+  git pull <remote-name> <branch-name>
+  ```
+  *Example:* `git pull origin main` *(This downloads new commits from GitHub and merges them directly into your current local branch).*
