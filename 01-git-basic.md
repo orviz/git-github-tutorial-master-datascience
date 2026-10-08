@@ -1,6 +1,6 @@
 # 01 - Git Basics
 
-In this introductory chapter will review:
+In this introductory chapter we will review:
 * [010 - Git Configuration](#010---git-configuration)
 * [011 - Repository Creation](#011-repository-creation)
 * [012 - Understanding the Staging Lifecycle](#012-understanding-the-staging-lifecycle)
