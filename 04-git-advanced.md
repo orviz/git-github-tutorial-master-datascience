@@ -3,7 +3,8 @@
 In this chapter we will review:
 * [040 - Fork Maintenance](#040---fork-maintenance)
 * [041 - Complex Git Flows](#041---complex-git-flows)
-* [042 - Time Travel: Rewriting the Past]()
+* [042 - Ignoring Files](#042---ignoring-files)
+* [043 - Time Travel: Rewriting the Past](#043---time-travel)
 
 ## 040 - Fork Maintenance
 
@@ -90,7 +91,7 @@ GitHub Flow is intentionally easy to implement, which GitHub developers use them
 
 ---
 
-## 042 - Repository File Management
+## 042 - Ignoring Files
 
 When you run `git status`, Git tracks every single change in your folder. However, **certain files might never uploaded** to GitHub:
 *   **System junk:** Cache files (like macOS `.DS_Store` or Windows `Thumbs.db`).
