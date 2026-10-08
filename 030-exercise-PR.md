@@ -7,81 +7,71 @@ Up until now, you have been working on your own repositories where you have abso
 
 ---
 
-### 🧱 Concept 1: The Fork (GitHub Web)
-A **Fork** is a GitHub feature that creates a personal copy of someone else's repository under your own GitHub account. 
-* The original repository is called the **Upstream**.
-* Your personal copy is called the **Origin**.
 
-### 🧱 Concept 2: The Clone (Local CLI)
-Once you have your own copy on GitHub, you use `git clone` to download that entire project (including all its history and branches) onto your computer's hard drive so you can work on it using VS Code.
+## Required Concepts: Fork & Clone
+
+### Concept 1: The Fork (GitHub Web)
+A *Fork* is a GitHub feature that **creates a personal copy of someone else's repository under your own GitHub account**.  Then within the *Forking Workflow* we will have two remotes:
+* The original repository is called the **Upstream** &rarr; by convention the remote name is: `upstream`.
+* Your personal copy is called the **Origin** &rarr; by convention the remote name is: `origin`.
+
+### Concept 2: The Clone (Git CLI)
+Once you have your own copy on GitHub, you use `git clone` to download that entire project (including all its history and branches) onto your local computer.
+- Syntax:
+     ```bash
+     git clone <url>
+     ```
+     where <url> in our case will point to the GitHub repository.
+- Upon a successful `git clone` execution, the **`origin` remote is automatically created** for us. 
 
 ---
 
 ## 🏋️ Practice Challenge: The Open Source Simulation
 
-For this exercise, you will play the role of an open-source contributor. You are going to submit a change to the **Main Teacher Repository** (your instructor will provide the exact URL).
+For this exercise, you will play the role of an open-source contributor. The **main task is to submit a Pull Request (PR) to the Main Teacher's Repository**:
+
+***https://github.com/masterdatascience-UIMP-UC/hellogitworld***
 
 ### Part A: Forking the Repository (Web)
-1. Open your browser and navigate to the **Instructor's Repository URL**.
-2. In the top-right corner of the page, click the **"Fork"** button.
-3. Ensure your account is selected as the owner and click **"Create fork"**.
-*✨ Look at the URL now! It should say `://github.com`. This copy is 100% yours.*
+1. Open your the URL above. In the **top-right corner of the page, click the *"Fork"* button**.
+2. Select **your account as the owner and click *"Create fork"***.
+3. GitHub will redirect you to the copy done within your repository: Note that it is now *https://github.com/<your-github-account>>/hellogitworld*
 
 ---
 
-### Part B: Cloning to Your Machine (CLI)
+### Part B: Cloning the Fork to Your Machine (Git CLI)
 Now, let's bring your copy down to your local workspace using the terminal.
 
-1. On your personal fork webpage, click the green **"<> Code"** button and copy the HTTPS URL.
-2. Open your VS Code terminal and make sure you are NOT inside your old project folder (run `cd ..` to go back if needed).
+1. On your personal fork webpage, **click the *"<> Code"* button and copy the HTTPS URL** (or use the browser's URL field).
+2. **Open your terminal** and *make sure you are NOT inside your old project* folder (run `cd ..` to go back if needed).
 3. Run the clone command:
    ```bash
-   git clone <PASTE-YOUR-FORK-URL-HERE>
+   $ git clone https://github.com/<your-github-account>>/hellogitworld
    ```
 4. Move inside the newly created directory:
    ```bash
-   cd <repository-name>
+   $ cd hellogitworld
+   ```
+5. Verify that the remote has been automatically created, and that it points to the `main` branch:
+   ```bash
+   $ git remote -v
+   (..)
    ```
 
 ---
 
-### Part C: The Feature Branch (CLI)
-Following the GitHub Flow, we never edit code on `main`. Let's create a sandbox branch for our contribution:
+### Part C: Propose a Change to the Upstream Repository
 
-```bash
-git checkout -b add-my-profile
-```
-
-Now, open the project in VS Code. Locate the file named `CONTRIBUTORS.md` (or the file specified by your instructor) and add your name and GitHub username to the list:
-```markdown
-* [Your Name](https://github.com) - Student Practitioner
-```
-Save the file and commit your changes using your CLI routines:
-```bash
-git status
-git add CONTRIBUTORS.md
-git commit -m "docs: add my profile to contributors list"
-```
-
----
-
-### Part D: Pushing Your Branch (CLI)
-Push your feature branch to **your** remote repository (your fork) on GitHub:
-
-```bash
-git push -u origin add-my-profile
-```
-
----
-
-### Part E: Opening the Pull Request to the Original Project (Web)
-This is the magic step. GitHub is smart enough to know your fork came from the original teacher's repository.
-
-1. Go to your fork page on **GitHub.com** in your browser.
-2. You will see the familiar yellow banner: **"add-my-profile had recent pushes..."**. Click **"Compare & pull request"**.
-3. Look closely at the top dropdown menus. You will see:
-   * `base repository`: The instructor's original project (where you want your code to go).
-   * `head repository`: Your fork and your feature branch (where your code is coming from).
-4. Click **"Create pull request"**.
-
-*🎉 Congratulations! You have officially submitted a contribution to a project you don't own. The instructor can now review, comment, and merge your code into the master project.*
+**Now it is your turn**, remember that we will **follow the steps we've seen in the GitHub Flow**, i.e.:
+1. [Terminal] Add the change/s in a feature branch, other than the `main` branch.
+    - A single commit is enough, but feel free to add more than one.
+    - The commit/s may imply modifications in more than one file.
+    - The commit message/s shall be descriptive.
+    - The Git CLI flow is: `Create & Switch Branch > Edit > *add* > *commit* > *push*`. 
+2. [GitHub] Create the Pull Request.
+    - Select the feature branch in the list.
+    - Click on `Contribute > Open pull request`.
+    - Look closely at the top dropdown menus. You will see:
+        * `base repository`: The *Upstream* project (*where you want your code to go*).
+        * `head repository`: Your *Fork* and your feature branch (*where your code is coming from*).
+    - Provide a meaningful PR title and description.

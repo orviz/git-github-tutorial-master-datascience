@@ -184,3 +184,7 @@ Once the file is cleaned up and saved, you need to **tell Git that the conflict 
    ```
 
 Check what `git log` says.
+
+--- 
+
+**Now it is [time for you to take over in the following exercise](./030-exercise-PR.md).**
