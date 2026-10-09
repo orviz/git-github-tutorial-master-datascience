@@ -129,12 +129,32 @@ We will simulate a change in the code on GitHub, which in the real world could h
    ```bash
    $ git pull origin main
    ```
+
+    ***Note for Git versions >= 2.27***: after running `git pull origin main`, Git might stop and refuse to proceed, warning us like this:
+
+    ```text
+    hint: Pulling without specifying how to reconcile divergent branches is
+    hint: discouraged. You can squelch this message by running one of the following
+    hint: commands:
+    hint:   git config pull.rebase false  # merge (the default strategy)
+    hint:   git config pull.rebase true   # rebase
+    ```
+
+    For the time being, let's follow the default strategy (`merge`). Just run:
+
+    ```bash
+    $ git config pull.rebase false
+    
+    # and once again
+    $ git pull origin main
+    ```
 7. Inspect the Results!
     - Look at your terminal output. You will see a fast-forward summary showing that lines were added (`1 file changed, 1 insertion(+)`).
     - To prove the CLI successfully synchronized your project:
       1. Look for the remote line in the local `README.md`: either with your local editor (nano, vim, VSCode) or with `cat` Shell command.
       2. Check the history log (`git log`) and look for the commit.
 
+---
 
 ### Understanding the Syncing Process in Git: Pull (`git pull`) vs Fetch (`git fetch`)
 
