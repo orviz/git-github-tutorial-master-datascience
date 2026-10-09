@@ -14,8 +14,12 @@ This tutorial is based on ["Pro Git"](https://git-scm.com/book/en/v2) by Scott C
 ## 🛠️ Step 0: Set up your Environment
 Before we begin, open your preferred environment and log into your **GitHub account**.
 
-1. Local Git CLI is preferred. If not installed, [follow installation steps based on your operating system](#git-cli-installation-local-option-preferred).
-2. If not locally installed, use the Master's [Data Science Hub service](#git-cli-from-data-science-hub-services-jupyterlab-the-fastest-for-day-0).
+1. Local Git CLI is preferred, and even better the **use of a Git CLI integrated in a IDE [VS Code](https://code.visualstudio.com/), [Cursor](https://cursor.com/), etc.**.
+2. If IDE is not an option, enable system's Git CLI:
+    - [Follow installation steps based on your operating system](#git-cli-installation-local-option-preferred).
+    - Note that *this option implies the use of a Terminal Editor* (`nano`, `vim`, ...)
+3. For course's Day 1, and whenever the Git CLI is not available locally (check 1 and 2 above), use the Master's [Data Science Hub service](#git-cli-from-data-science-hub-services-jupyterlab-the-fastest-for-day-0).
+4. Lastly, there are alternative *cloud choices* such as *GitHub Codespaces*.
 
 ### Git CLI installation: Local Option (the *Preferred Option*)
 
