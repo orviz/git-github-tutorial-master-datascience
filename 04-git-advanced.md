@@ -87,7 +87,7 @@ Now, if you visit your GitHub fork page in the browser, it will proudly say: *"T
 
 GitHub Flow is intentionally easy to implement, which GitHub developers use themselves. However, large projects may require more complex approaches, such as *Git Flow*:
 
-![GitHub Flow](images/github_flow.png)
+![GitHub Flow](images/git_flow.png)
 
 ---
 
