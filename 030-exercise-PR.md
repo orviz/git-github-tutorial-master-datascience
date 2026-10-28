@@ -33,7 +33,7 @@ For this exercise, you will play the role of an open-source contributor. The **m
 ***https://github.com/masterdatascience-UIMP-UC/hellogitworld***
 
 ### Part A: Forking the Repository (Web)
-1. Open your the URL above. In the **top-right corner of the page, click the *"Fork"* button**.
+1. Open the URL above. In the **top-right corner of the page, click the *"Fork"* button**.
 2. Select **your account as the owner and click *"Create fork"***.
 3. GitHub will redirect you to the copy done within your repository: Note that it is now *https://github.com/<your-github-account>>/hellogitworld*
 
